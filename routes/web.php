@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\AddArticle;
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeComponent::class);
+Route::get('/add/article', AddArticle::class)->name('add.article');
 
 Route::middleware([
     'auth:sanctum',
