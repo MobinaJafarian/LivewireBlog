@@ -11,6 +11,12 @@ class AddArticle extends Component
     public $title;
     public $description;
     public $link;
+
+    protected $rules = [
+        'title' => 'required',
+        'description' => 'required',
+    ];
+
     public function render()
     {
         return view('livewire.add-article');
@@ -23,6 +29,7 @@ class AddArticle extends Component
 
     public function addArticle()
     {
+        $this->validate();
         $article  = new Article();
         $article->title = $this->title;
         $article->description = $this->description;
